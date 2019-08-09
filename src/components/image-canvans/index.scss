@@ -1,0 +1,21 @@
+.image-canvans{
+   height: 100%;
+   position: relative;
+   width: 100%;
+   .canvans{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       left: 0rpx;
+       top: 0rpx;
+   }
+
+   .image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0rpx;
+        top: 0rpx;
+        z-index: -1;
+   }
+}

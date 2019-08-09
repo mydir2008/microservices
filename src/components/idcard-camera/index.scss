@@ -1,0 +1,26 @@
+:host {
+    width: 100%;
+    height: 100%;
+    background: gray;
+    display:block;
+}
+
+.idcard-camera {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.take-photo {
+    position: absolute;
+    height: 120rpx;
+    width: 100%;
+    bottom: 120rpx;
+    text-align: center;
+
+    &__image {
+        width: 120rpx;
+        height: 120rpx;
+        display: inline-block;
+    }
+}

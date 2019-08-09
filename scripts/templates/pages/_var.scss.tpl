@@ -1,0 +1,1 @@
+@import "{{{relativeGlobalVarLessPath}}}_var.less"

@@ -1,0 +1,28 @@
+@import "../../../themes/default/app.scss";
+.progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    visibility: visible;
+    opacity: 1;
+    transition: all .4s;
+    z-index: 9999;
+    &-percent{
+        height: 2px;
+        background: @color-brand;
+        box-shadow: 0 0 10px rgba(119,182,255,.7);
+        transition: all .3s ease;
+        animation-name: widthAnimation;
+        animation-duration: 3s;
+    }
+}
+
+@keyframes widthAnimation{
+    0% {
+        width:0%;
+    }
+    100% {
+        width:97%;
+    }
+}

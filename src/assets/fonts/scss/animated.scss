@@ -1,0 +1,34 @@
+// Animated Icons
+// --------------------------
+
+.${fa-css-prefix}-adjust-hue {
+  -webkit-animation: fa-adjust-hue 2s infinite linear;
+          animation: fa-adjust-hue 2s infinite linear;
+}
+
+.${fa-css-prefix}-pulse {
+  -webkit-animation: fa-adjust-hue 1s infinite steps(8);
+          animation: fa-adjust-hue 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-adjust-hue {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-adjust-hue {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
