@@ -80,12 +80,7 @@ class Index_index extends Component {
           <Playout  p-layout-class="p-layout">
             <AtCard note='小Tips'>
                 <Pcontent p-content-class="p-content">
-                  <IdcardCamera 
-                        devicePosition="back"
-                        width={screenWidth}
-                        height={screenHeight}
-                        success={this.success} 
-                      error={this.error}></IdcardCamera>
+                  <View>初始页面</View>
                 </Pcontent>
             </AtCard>
           </Playout>
