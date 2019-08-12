@@ -30,10 +30,7 @@ class App extends Component {
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
     },
-    subPackages: SUBPACKAGE_PAGES,
-    permission: {
-      'scope.camera': true
-    }
+    subPackages: SUBPACKAGE_PAGES
   }
 
   componentDidMount () {}
