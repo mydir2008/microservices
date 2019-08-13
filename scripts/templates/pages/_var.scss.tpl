@@ -1,1 +1,1 @@
-@import "{{{relativeGlobalVarLessPath}}}_var.less"
+@import "{{{relativeGlobalVarLessPath}}}_var.scss";

@@ -24,7 +24,7 @@ const modelJsTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_mode
 const serviceJsTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_service.js.tpl'), 'utf-8');
 const indexJsTpl = fs.readFileSync(path.join(__dirname, './templates/pages/index.js.tpl'), 'utf-8');
 const indexLessTpl = fs.readFileSync(path.join(__dirname, './templates/pages/index.scss.tpl'), 'utf-8');
-const varLessTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_var.less.tpl'), 'utf-8');
+const varLessTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_var.scss.tpl'), 'utf-8');
 const localeTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_locale.js.tpl'), 'utf-8');
 
 let p
