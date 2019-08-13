@@ -1,1 +1,1 @@
-@import "{{{relativeGlobalVarLessPath}}}_var.scss";
+@import "./src/var.scss";
