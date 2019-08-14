@@ -14,6 +14,8 @@ if (args.length !== 3 || !args[2]){
 const type = args[2].split('\:')[0]
 const modulePath = args[2].split('\:')[1]
 let relativeGlobalVarLessPath = modulePath.split('\/').map(r => '../').join('')
+
+console.log(relativeGlobalVarLessPath)
 const namespace = modulePath.replace(/\//g, '') + '_index'
 let componentName = modulePath.replace(/\//g, '') + '_index'
 componentName = componentName[0].toLocaleUpperCase() + componentName.substring(1,componentName.length)

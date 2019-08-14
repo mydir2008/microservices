@@ -9,8 +9,9 @@ import _locale from './_locale'
 import './index.scss'
 import './_model'
 
+const modelName = '{{module}}'
 //定义的page高阶组价参数
-@page(['{{module}}'], {initLoading: false})
+@page([modelName], {initLoading: false,modelName:modelName})
 class {{component}} extends Component {
 
   constructor(props){
@@ -26,9 +27,9 @@ class {{component}} extends Component {
     navigationBarTitleText: '测试:首页'
   }
   
-  //@dispath('{{module}}/user')
-  //@dispath('{{module}}/user1')
-  //@dispath('{{module}}/user2')
+  //@dispath(modelName + '/user')
+  //@dispath(modelName + '/user1')
+  //@dispath(modelName + '/user2')
   componentDidMount(option){
 
     //在这里初始化数据
@@ -45,6 +46,20 @@ class {{component}} extends Component {
 
   }
 
+  @dispath(modelName + '/changeLoading')
+  showLoading(type){
+    let loadingModel = {
+      initLoading: 0,
+      loadingMark: 0
+    }
+    if(!type){
+      loadingModel.initLoading = 1
+    }else{
+      loadingModel.loadingMark = 1
+    }
+    return loadingModel
+  }
+
   onShareAppMessage (res) {
     //if (res.from === 'button') {
       // 来自页面内转发按钮
@@ -56,7 +71,7 @@ class {{component}} extends Component {
     //}
   }
 
-  //@dispath('{{module}}/user')
+  //@dispath(modelName + '/user')
   test(){
     return {
       name: 'test',
@@ -72,6 +87,7 @@ class {{component}} extends Component {
 
   render () {
     const props = this.props
+    const rModelName = this.props[modelName]
     //获取路由参数
     ///const routeParam = this.$router
     return (

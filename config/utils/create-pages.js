@@ -21,9 +21,16 @@ function createPages (root, wxpathPrefix, pages, onDecision,path){
             }
             const _page = element.substring(0, element.lastIndexOf('\.'))
             console.log('构建page:' + startPath + _page)
-            pages.push(startPath + _page)
+            let pagepath = startPath + _page
+            if(pagepath === path){
+                pages.unshift(startPath + _page)
+            }else{
+                pages.push(startPath + _page)
+            }
+            
         }
     })
+    //写文件
 }
 
 module.exports = createPages
