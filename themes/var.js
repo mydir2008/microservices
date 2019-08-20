@@ -5,11 +5,22 @@
 const path = require('path')
 const Mustache = require('mustache');
 const fs = require('fs')
+const os = require("os")
 const cwd = process.cwd()
 const args = process.argv;
-const srcPath = path.resolve('./src');
-const thisPath = path.resolve('./themes/default');
-//console.log(filePath)
+let srcPath = path.resolve('./src');
+let thisPath = path.resolve('./themes/default');
+let joinString = '\\'
+if(os.type() !== 'Windows_NT'){
+    srcPath = srcPath.split(path.sep).join('/')
+    thisPath = thisPath.split(path.sep).join('/')
+    joinString = '/'
+}
+
+
+//Linux系统上'Linux'
+//macOS 系统上'Darwin'
+//Windows系统上'Windows_NT'
 
 
 const fsExistsSync = (path) => {
@@ -49,16 +60,20 @@ const fileDisplay = (filePath) => {
                                     }
                                 }else{
                                     //是否创建目录
-                                    let filedirPath = filedir.replace(srcPath + '\\','')
-                                    filedirPath = filedirPath.replace('\\_var.scss','').split('\\')
+                                    let filedirPath = filedir.replace(srcPath + joinString,'')
+                                    filedirPath = filedirPath.replace(joinString + '_var.scss','').split(joinString)
                                     let dirPath = thisPath
-                                    filedirPath.forEach((dir)=>{
-                                        dirPath = dirPath + '\\' + dir
-                                        let isdirPath = fsExistsSync(dirPath)
-                                        if(!isdirPath){
-                                            fs.mkdirSync(dirPath)
-                                        }
-                                    })
+                                    if(filedirPath[0] !== '_var.scss'){
+                                        filedirPath.forEach((dir)=>{
+                                            dirPath = dirPath + joinString + dir
+                                            let isdirPath = fsExistsSync(dirPath)
+                                            if(!isdirPath){
+                                                //判断文件路径内是否带'_var.scss'
+                                                fs.mkdirSync(dirPath)
+                                            }
+                                        })
+                                    }
+                                    if(filedirPath)
                                     fs.writeFileSync(filedir.replace(srcPath, thisPath), content, 'utf-8');
                                 }
                             }
@@ -74,7 +89,7 @@ const fileDisplay = (filePath) => {
     })
 }
 
-console.log(args[2]) //dis:分发 col:收集
+//console.log(args[2]) //dis:分发 col:收集
 if(args[2] === 'dis'){
     //dis:分发
     fileDisplay(thisPath)

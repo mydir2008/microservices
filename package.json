@@ -14,8 +14,9 @@
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:weapp:test": "npm run build:weapp -- --watch --env test",
     "create:page": "node ./scripts/md.js",
-    "themes":"node ./themes/var.js",
-    "i18n":"node ./i18n/language.js",
+    "mock": "node ./scripts/serve.js",
+    "themes": "node ./themes/var.js",
+    "i18n": "node ./i18n/language.js",
     "test": "jest"
   },
   "author": "",
@@ -38,14 +39,18 @@
     "dva-core": "^1.4.0",
     "dva-immer": "^0.4.11",
     "dva-loading": "^3.0.12",
+    "global": "^4.4.0",
     "jest": "^24.8.0",
     "mustache": "^3.0.1",
     "nerv-devtools": "^1.4.0",
     "nervjs": "^1.4.0",
+    "numeral": "^2.0.6",
     "postcss-url": "^8.0.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.1.0",
+    "serve-handler": "^6.1.1",
     "taro-f2": "^2.1.2",
     "taro-ui": "^2.2.1"
   },
@@ -71,5 +76,15 @@
     "stylelint": "9.3.0",
     "stylelint-config-taro-rn": "1.3.9",
     "stylelint-taro-rn": "1.3.9"
+  },
+  "proxy": {
+    "/test": {
+      "target": "https://localhost:8880",
+      "changeOrigin": true,
+      "secure": false,
+      "pathRewrite": {
+        "^/test": "/"
+      }
+    }
   }
 }

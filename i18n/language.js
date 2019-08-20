@@ -1,11 +1,19 @@
 const path = require('path')
 const Mustache = require('mustache');
 const fs = require('fs')
+const os = require("os")
 const cwd = process.cwd()
 const args = process.argv;
 
-const srcPath = path.resolve('./src');
-const thisPath = path.resolve('./i18n');
+let srcPath = path.resolve('./src');
+let thisPath = path.resolve('./i18n');
+let joinString = '\\'
+
+if(os.type() !== 'Windows_NT'){
+    srcPath = srcPath.split(path.sep).join('/')
+    thisPath = thisPath.split(path.sep).join('/')
+    joinString = '/'
+}
 
 const fileDisplay = (filePath,type) => {
     let ans = {};
@@ -40,10 +48,10 @@ const fileDisplay = (filePath,type) => {
                                     } catch (error) {
                                         console.warn('config.json必须是object类型');
                                     }
-                                    let firstdir = filedir.indexOf('src\\'),enddir = filedir.indexOf('\\_locale.js');
+                                    let firstdir = filedir.indexOf('src' + joinString),enddir = filedir.indexOf(joinString + '_locale.js');
                                     let subkey = filedir.substring(firstdir+4,enddir)
-                                    if(aggregate[subkey.replace('\\','_')]){
-                                        fs.writeFileSync(filedir, 'export default ' + JSON.stringify(Object.assign(aggregate[subkey.replace('\\','_')], content),null, 4), 'utf-8');
+                                    if(aggregate[subkey.replace(joinString,'_')]){
+                                        fs.writeFileSync(filedir, 'export default ' + JSON.stringify(Object.assign(aggregate[subkey.replace(joinString,'_')], content),null, 4), 'utf-8');
                                     }
                                 }else{
                                     //收集
@@ -54,9 +62,9 @@ const fileDisplay = (filePath,type) => {
                                     } catch (error) {
                                         console.warn(filedir + '必须是object类型');
                                     }
-                                    let firstdir = filedir.indexOf('src\\'),enddir = filedir.indexOf('\\_locale.js');
+                                    let firstdir = filedir.indexOf('src' + joinString),enddir = filedir.indexOf(joinString+'_locale.js');
                                     let subkey = filedir.substring(firstdir+4,enddir)
-                                    aggregate[subkey.replace('\\','_')] = content
+                                    aggregate[subkey.replace(joinString,'_')] = content
                                     fs.writeFileSync(thisPath + '/config.json', JSON.stringify(aggregate,null, 4), 'utf-8');
                                 }
                             }

@@ -1,1 +1,1 @@
-@import "./src/var.scss";
+@import "./src/_var.scss";

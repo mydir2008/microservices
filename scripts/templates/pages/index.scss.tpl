@@ -1,4 +1,4 @@
-@import "./_var.scss";
+@import "_var.scss";
 
 /* PageLayout样式扩展 */
 .page-layout-class{

@@ -31,7 +31,6 @@ class {{component}} extends Component {
   //@dispath(modelName + '/user1')
   //@dispath(modelName + '/user2')
   componentDidMount(option){
-
     //在这里初始化数据
     //return {
     //    user:{},
@@ -41,23 +40,7 @@ class {{component}} extends Component {
   }
 
   componentWillUnmount () {
-
-     //在这里销毁资源
-
-  }
-
-  @dispath(modelName + '/changeLoading')
-  showLoading(type){
-    let loadingModel = {
-      initLoading: 0,
-      loadingMark: 0
-    }
-    if(!type){
-      loadingModel.initLoading = 1
-    }else{
-      loadingModel.loadingMark = 1
-    }
-    return loadingModel
+    //在这里销毁资源
   }
 
   onShareAppMessage (res) {
@@ -79,19 +62,18 @@ class {{component}} extends Component {
     }
   }
   
-  onEffectComplete(arg){
-    
+  onEffectComplete(arg, methodName){
     //处理所有dispatch callback结果
-    
   }
 
   render () {
     const props = this.props
     const rModelName = this.props[modelName]
+    const isLoading = this.hasLoading()
     //获取路由参数
     ///const routeParam = this.$router
     return (
-      <Pagelayout {...props} page-layout-class="page-layout-class">
+      <Pagelayout {...props} isLoading={isLoading} page-layout-class="page-layout-class">
         <Ppage p-page-class="p-page">
           <Playout  p-layout-class="p-layout">
             <AtCard note='小Tips'>

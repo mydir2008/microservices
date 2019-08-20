@@ -1,13 +1,14 @@
 /**
  * 创建页面模板
  * npm run create:page m:页面路径
+ * npm run create:page m:application/enjoyacceptPretrial
  */
 const path = require('path')
 const Mustache = require('mustache');
 const fs = require('fs')
 const cwd = process.cwd()
 const args = process.argv;
-if (args.length !== 3 || !args[2]){
+if (args.length !== 3 || !args[2]) {
     console.log('[npm run create:page]: 命令参数格式不正确')
     return
 }
@@ -18,7 +19,7 @@ let relativeGlobalVarLessPath = modulePath.split('\/').map(r => '../').join('')
 console.log(relativeGlobalVarLessPath)
 const namespace = modulePath.replace(/\//g, '') + '_index'
 let componentName = modulePath.replace(/\//g, '') + '_index'
-componentName = componentName[0].toLocaleUpperCase() + componentName.substring(1,componentName.length)
+componentName = componentName[0].toLocaleUpperCase() + componentName.substring(1, componentName.length)
 
 //tpls
 const configJsTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_config.js.tpl'), 'utf-8');
@@ -30,36 +31,36 @@ const varLessTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_var.
 const localeTpl = fs.readFileSync(path.join(__dirname, './templates/pages/_locale.js.tpl'), 'utf-8');
 
 let p
-if (type === 'm'){ //在主包下创建页面
+if (type === 'm') { //在主包下创建页面
     p = path.join(cwd, './src/pages/' + modulePath)
 } else {
     relativeGlobalVarLessPath = relativeGlobalVarLessPath + '../'
 }
 
-if (type === 's1'){
+if (type === 's1') {
     p = path.join(cwd, './src/subpackage1/' + modulePath)
 }
-if (type === 's2'){
+if (type === 's2') {
     p = path.join(cwd, './src/subpackage2/' + modulePath)
 }
-if (type === 's3'){
+if (type === 's3') {
     p = path.join(cwd, './src/subpackage3/' + modulePath)
 }
-if (type === 's4'){
+if (type === 's4') {
     p = path.join(cwd, './src/subpackage4/' + modulePath)
 }
-if (!p){
+if (!p) {
     console.log('[npm run create:page]: 命令参数格式不正确')
     return
 }
-if (fs.existsSync(p)){
+if (fs.existsSync(p)) {
     console.log('[npm run create:page]: 页面已经存在')
     return
 }
 //创建目录
-fs.mkdirSync(p, {recursive: true})
+fs.mkdirSync(p, { recursive: true })
 
-const tplContext = { module: namespace,component:componentName, relativeGlobalVarLessPath: relativeGlobalVarLessPath }
+const tplContext = { module: namespace, component: componentName, relativeGlobalVarLessPath: relativeGlobalVarLessPath }
 
 const configJsTplContent = Mustache.render(configJsTpl, tplContext)
 const modelJsTplContent = Mustache.render(modelJsTpl, tplContext)
