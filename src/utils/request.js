@@ -8,6 +8,7 @@
  * wxlogin: 微信登录 获取用户信息,opendId, unionId等等
  * createSessionCookie 创建会话
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 
 import Taro, { checkSession } from '@tarojs/taro';

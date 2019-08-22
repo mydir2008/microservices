@@ -10,6 +10,7 @@ import './index.scss'
 /**
  * 扩展f2Canavas，支持图片与canvans转换
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 class Index extends Component {
 

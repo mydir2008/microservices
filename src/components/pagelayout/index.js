@@ -12,6 +12,7 @@ import './index.scss'
         loading: 0
     }
     @author 聂维
+ * @email stevennie@aliyun.com
  */
 class PageLayout extends Component {
     static externalClasses = ['page-layout-class']

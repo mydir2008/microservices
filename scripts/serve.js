@@ -2,6 +2,8 @@
  * 创建serve，模拟mock服务,参考实现:
  * https://github.com/zeit/serve/blob/master/bin/serve.js
  * https://github.com/zeit/serve-handler/blob/master/src/index.js
+ * @author 聂维
+ * @email stevennie@aliyun.com
  */
 const handler = require('serve-handler');
 const http = require('http');

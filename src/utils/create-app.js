@@ -13,6 +13,7 @@ let resolveApps = []
  * 配置参考详见:https://github.com/dvajs/dva/blob/master/packages/dva-core/src/index.js
  * @param {} opt 
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 function createApp(opt) {
   // redux日志

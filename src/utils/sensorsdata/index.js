@@ -37,6 +37,7 @@
  *   }
  * 
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 import { post, get } from '../request'
 import { getCurrentPages } from '@tarojs/taro';

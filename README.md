@@ -244,7 +244,6 @@ export default Index
        * 
        *   }
        * 
-       * @author 聂维
        */
       export default function(data){
           //编写格式化逻辑代码

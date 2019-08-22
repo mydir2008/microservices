@@ -2,6 +2,7 @@
  * 手机号验证
  * 参考: https://github.com/validatorjs/validator.js/blob/master/src/lib/isMobilePhone.js
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 import assertString from './assert-string'
 

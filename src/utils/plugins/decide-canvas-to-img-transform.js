@@ -1,6 +1,7 @@
 /**
  * 判断是否需要Canvas转换image, 该方法主要在components/pagelayout.js 中调用
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 
 export default function(pagelayout){

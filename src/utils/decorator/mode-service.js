@@ -18,6 +18,7 @@ const request = {get, post, postForm}
  * @param {*} filed
  * 
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 function Service(name, type, url, filed) {
     return function (Constructor, key, desc) {

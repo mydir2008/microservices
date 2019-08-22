@@ -7,6 +7,7 @@ import isPlainObject from 'is-plain-object';
  * 参考实现: dva-core/src/Plugin.js  umijs插件系统
  *
  *  @author 聂维
+ * @email stevennie@aliyun.com
  */
 const hooks = {}
 

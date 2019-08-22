@@ -2,6 +2,7 @@
  * 不为空验证
  * 参考: https://github.com/validatorjs/validator.js/blob/master/src/lib/isEmpty.js
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 import assertString from './assert-string'
 

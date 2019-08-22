@@ -28,6 +28,7 @@
  *   }
  * 
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 export default function(data){
     //编写格式化逻辑代码

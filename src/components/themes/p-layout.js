@@ -4,6 +4,7 @@ import './index.scss'
 /**
  * 布局规范 -- 布局层
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 class Index extends Component {
     

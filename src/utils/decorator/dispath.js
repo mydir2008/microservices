@@ -25,7 +25,8 @@
  * 
  * @param {*} type 
  * @param {*} options
- * @author 聂维 
+ * @author 聂维
+ * @email stevennie@aliyun.com 
  */
 export default function(type, options){
     return (target, key, desc)=> {

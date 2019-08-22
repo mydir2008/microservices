@@ -15,6 +15,7 @@ import takephoto from './takephoto.png'
  * 身份证Orc识别组件
  * ......有待扩展
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 class Index extends Component {
   constructor(props) {

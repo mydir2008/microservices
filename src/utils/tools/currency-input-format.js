@@ -2,6 +2,7 @@
  * 币种格式化
  * 
  * @author 聂维
+ * @email stevennie@aliyun.com
  */
 import numeral from 'numeral'
 
