@@ -1,0 +1,12 @@
+/**
+ * 边线
+ */
+@mixin liner($num: 1px) {
+  height: $num;
+  width: 100%;
+  background-color: $bordercolor;
+  transform-origin: 0 0;
+  transform: scaleY(0.3333);
+  position: relative;
+  left: $padding30;
+}

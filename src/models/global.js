@@ -20,6 +20,7 @@ createModel({
 
         //设备信息
         deviceInfo: {
+            model: deviceInfo.model,
             //像素比
             pixelRatio: deviceInfo.pixelRatio,
             //可视宽度
@@ -33,9 +34,10 @@ createModel({
             //状态栏高度
             statusBarHeight: deviceInfo.statusBarHeight,
             //微信字体设置大小
-            fontSizeSetting: deviceInfo.fontSizeSetting
+            fontSizeSetting: deviceInfo.fontSizeSetting,
+            //是否isIpx
+            isIpx:deviceInfo.model.indexOf('iPhone X') > -1 ? true : false
         },
-
         //当前用户数据
         userData: null,
         //国际化数据
@@ -71,9 +73,7 @@ createModel({
         //登录
         *login({ payload }, { select, call, put }){
            try {
-                   
-
-
+            
            } catch (error) {
                
            }

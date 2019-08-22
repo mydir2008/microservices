@@ -1,0 +1,44 @@
+<!--
+  number keyboard template declare
+  NOTE: Don't modify, otherwise keyboard will not load normally.
+  copyright: CFCA
+  auther: mayuchuan
+  time:23/05/2018
+-->
+
+<template name="SIPNumberKeyboardTemplate">
+  <block wx:if="{{isShow}}">
+    <block wx:if="{{keyboardType == 0}}">
+      <view class="{{cfcakeyboardView}}" style="padding-bottom:{{bottomOffset}}rpx">
+        <block wx:for="{{keyDetailValue}}" wx:key="" wx:for-index="outterIdx" wx:for-item="outterItem">
+          <view class="{{cfcaKeyboardRow}}">
+            <block wx:if="{{outterIdx == 3}}">
+              <view class="{{digitalKeyViewProperty}}">
+                <button id="DELETE" class="{{numberKeyProperty}}" bindtap="handleInput" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" bindtouchcancel="onTouchcancel" hover-class="{{cfcaDigitalKeyboardFunckeyHover}}">
+                  <block wx:if="{{isDeleting}}">
+                    <image class="{{imgDigitalFuncKeyProperty}}" mode="aspectFit" src="{{imageDeletePressed}}"></image>
+                  </block>
+                  <block wx:else>
+                    <image class="{{imgDigitalFuncKeyProperty}}" mode="aspectFit" src="{{imageDelete}}"></image>
+                  </block>
+                </button>
+              </view>
+            </block>
+
+            <block wx:for="{{outterItem}}" wx:key="" wx:for-index="innerIdx" wx:for-item="innerItem">
+              <view class="{{digitalKeyViewProperty}}">
+                <button data-hi="{{innerItem.value}}" class="{{innerIdx==2?numberEdgeKeyProperty:numberKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaDigitalKeyboardKeyHover}}">{{innerItem.value}}</button>
+              </view>
+            </block>
+
+            <block wx:if="{{outterIdx == 3}}">
+              <view class="{{digitalKeyViewProperty}}">
+                <button data-hi="FINISH" class="{{numberFuncKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaDigitalKeyboardFunckeyHover}}">{{finishTitle}}</button>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+</template>

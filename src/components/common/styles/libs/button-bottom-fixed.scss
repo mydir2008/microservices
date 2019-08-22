@@ -1,0 +1,17 @@
+/**
+ * 按钮底部定位-通用底部按钮
+ */
+
+@mixin button-bottom-fixed(
+  $position: fixed,
+  $width: 100%,
+  $background: $btn-backgroundcolor
+) {
+  position: $position;
+  bottom: 0;
+  width: $width;
+  line-height: 94px;
+  background: $background;
+  text-align: center;
+  color: #fff;
+}

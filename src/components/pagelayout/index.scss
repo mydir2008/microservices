@@ -1,5 +1,10 @@
-@import "../../../themes/default/app.scss";
-.progress-bar{
+@import "./src/_var.scss";
+
+.pagelayout {
+    min-height: 100vh;
+}
+
+.progress-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,21 +13,121 @@
     opacity: 1;
     transition: all .4s;
     z-index: 9999;
-    &-percent{
+
+    &-percent {
         height: 2px;
-        background: @color-brand;
-        box-shadow: 0 0 10px rgba(119,182,255,.7);
+        background: &color-brand;
+        box-shadow: 0 0 10px rgba(119, 182, 255, .7);
         transition: all .3s ease;
         animation-name: widthAnimation;
         animation-duration: 3s;
     }
 }
 
-@keyframes widthAnimation{
-    0% {
-        width:0%;
+.loaddingView {
+    .mask {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.6);
     }
+
+    .loaderView {
+        width: 200px;
+        height: 160px;
+        border-radius: 30px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        background-color: rgba(0, 0, 0, .4);
+        transform: translate(-80px, -100px);
+        z-index: 9999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .loader {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            transform: rotate(165deg);
+            margin: 0 auto;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                width: 14px;
+                height: 14px;
+                border-radius: 8px;
+                transform: translate(-50%, -50%);
+            }
+
+            &:before {
+                animation: before 2s infinite;
+            }
+
+            &:after {
+                animation: after 2s infinite;
+            }
+        }
+    }
+}
+
+@keyframes before {
+    0% {
+        width: 14px;
+        box-shadow: 26px -14px rgba(225, 20, 98, 0.75), -26px 14px rgba(111, 202, 220, 0.75);
+    }
+
+    35% {
+        width: 32px;
+        box-shadow: 0 -14px rgba(225, 20, 98, 0.75), 0 14px rgba(111, 202, 220, 0.75);
+    }
+
+    70% {
+        width: 14px;
+        box-shadow: -26px -14px rgba(225, 20, 98, 0.75), 26px 14px rgba(111, 202, 220, 0.75);
+    }
+
     100% {
-        width:97%;
+        box-shadow: 26px -14px rgba(225, 20, 98, 0.75), -26px 14px rgba(111, 202, 220, 0.75);
+    }
+}
+
+@keyframes after {
+    0% {
+        height: 14px;
+        box-shadow: 14px 26px rgba(61, 184, 143, 0.75), -14px -26px rgba(233, 169, 32, 0.75);
+    }
+
+    35% {
+        height: 36px;
+        box-shadow: 14px 0 rgba(61, 184, 143, 0.75), -14px 0 rgba(233, 169, 32, 0.75);
+    }
+
+    70% {
+        height: 14px;
+        box-shadow: 14px -26px rgba(61, 184, 143, 0.75), -14px 26px rgba(233, 169, 32, 0.75);
+    }
+
+    100% {
+        box-shadow: 14px 26px rgba(61, 184, 143, 0.75), -14px -26px rgba(233, 169, 32, 0.75);
+    }
+}
+
+@keyframes widthAnimation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 97%;
     }
 }

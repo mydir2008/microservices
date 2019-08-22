@@ -1,0 +1,34 @@
+/**
+ * 小人高举牌子
+ */
+@mixin person-img($pos: fixed) {
+  position: $pos;
+  width: 191px;
+  height: 168px;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+}
+@mixin board-img($pos: fixed, $height: 220px, $font-size: 30px, $top: 70%) {
+  position: $pos;
+  width: 690px;
+  left: 143px;
+  top: $top;
+  height: $height;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  .img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .txt {
+    position: absolute;
+    z-index: 1;
+    padding: 46px;
+    font-size: $font-size;
+    line-height: 1.5;
+  }
+}

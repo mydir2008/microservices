@@ -1,0 +1,7 @@
+/**
+ * 上下距离块
+ */
+@mixin liner-gray($background-color: $page-background-color) {
+  background-color: $background-color;
+  height: 16px;
+}

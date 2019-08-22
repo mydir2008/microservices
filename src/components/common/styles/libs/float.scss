@@ -1,0 +1,6 @@
+/**
+ * 左右浮动
+ */
+@mixin float($float: left) {
+  float: $float;
+}

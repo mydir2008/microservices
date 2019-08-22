@@ -1,0 +1,368 @@
+/* 
+ * keyboard css define
+ * NOTE: Don't modify, otherwise keyboard will not load normally.
+ * copyright: CFCA
+ * auther: mayuchuan
+ * time:23/05/2018
+ */
+
+.cfca-keyboard {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  z-index: 99999999;
+  background-color: #d9dbdf;
+}
+
+.cfca-keyboard-row {
+  height: 108rpx;
+  width: 100%;
+  display: -moz-box; /* Firefox */
+  display: -ms-flexbox; /* IE10 */
+  display: -webkit-box; /* Safari */
+  display: -webkit-flex; /* Chrome, WebKit */
+  display: flexbox;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cfca-keyboard-view {
+  height: 82%;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+  line-height: 80rpx;
+}
+
+.cfca-complete-keyboard-view {
+  width: 9%;
+}
+
+.cfca-digital-keyboard-view {
+  width: 33.33%;
+  height: 100%;
+}
+
+.cfca-keyboard-key {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 40rpx;
+  text-align: center;
+  vertical-align: center;
+  background-color: #fff;
+  line-height: inherit;
+  font-family: sans-serif, Arial, Microsoft YaHei;
+}
+
+.cfca-complete-keyboard-key {
+  border-radius: 10rpx;
+  box-shadow: 0px 1px 0px 0px #828386;
+}
+
+.cfca-complete-keyboard-func-key {
+  font-size: 36rpx;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #bfc3c7;
+  line-height: inherit;
+}
+
+.cfca-digital-keyboard-key {
+  line-height: 100rpx;
+  border: solid #d9dbdf;
+  border-width: 2rpx 2rpx 0rpx 0rpx;
+  border-radius: 0rpx;
+}
+
+.cfca-digital-keyboard-func-key {
+  line-height: 100rpx;
+  background-color: #c7cbd1;
+  border: solid #d9dbdf;
+  border-width: 2rpx 0rpx 0rpx 0rpx;
+  border-radius: 0rpx;
+}
+
+.cfca-digital-keyboard-edge-key {
+  line-height: 100rpx;
+  border: solid #d9dbdf;
+  border-width: 2rpx 0rpx 0rpx 0rpx;
+  border-radius: 0rpx;
+}
+
+.cfca-keyboard-key::after {
+  border: none;
+}
+
+.cfca-digital-keyboard-key::after {
+  border: none;
+}
+
+.cfca-keyboard-view-capslock {
+  width: 14%;
+}
+
+.cfca-keyboard-view-switch {
+  width: 20%;
+}
+
+.cfca-keyboard-view-space {
+  width: 58%;
+}
+
+.cfca-keyboard-space-key {
+  font-size: 26rpx;
+  line-height: inherit;
+  background-color: #fff;
+}
+
+.cfca-complete-keyboard-key-hover {
+  background-color: #bcc0c9;
+  line-height: inherit;
+}
+
+.cfca-complete-keyboard-func-key-hover {
+  background-color: #989da7;
+  line-height: inherit;
+}
+
+.cfca-digital-keyboard-key-hover {
+  background-color: #d9dbdf;
+  line-height: 100rpx;
+}
+
+.cfca-digital-keyboard-func-key-hover {
+  background-color: #a8b0bb;
+  line-height: 100rpx;
+}
+
+.cfca-keyboard-key-gap-normal {
+  height: 92rpx;
+  width: 1%;
+}
+
+.cfca-keyboard-key-gap-one {
+  height: 92rpx;
+  width: 0.5%;
+}
+
+.cfca-keyboard-key-gap-two {
+  height: 92rpx;
+  width: 5.25%;
+}
+
+.cfca-keyboard-symbol-key-gap-three {
+  height: 92rpx;
+  width: 21%;
+}
+
+.cfca-keyboard-key-number-gap-one {
+  height: 92rpx;
+  width: 3%;
+}
+
+.cfca-logo {
+  width: 70%;
+  height: 56%;
+  vertical-align: middle;
+}
+
+.cfca-complete-func-img {
+  width: 60%;
+  height: 54%;
+  vertical-align: middle;
+}
+
+.cfca-digital-func-img {
+  width: 30%;
+  height: 54%;
+  vertical-align: middle;
+}
+
+
+/*适配IPAD*/
+.cfca-pad-keyboard {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  z-index: 99999999;
+  background-color: #d9dbdf;
+}
+
+.cfca-pad-keyboard-row {
+  height: 54px;
+  width: 100%;
+  display: -moz-box; /* Firefox */
+  display: -ms-flexbox; /* IE10 */
+  display: -webkit-box; /* Safari */
+  display: -webkit-flex; /* Chrome, WebKit */
+  display: flexbox;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cfca-pad-keyboard-view {
+  height: 82%;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+  line-height: 40px;
+}
+
+.cfca-pad-complete-keyboard-view {
+  width: 9%;
+}
+
+.cfca-pad-digital-keyboard-view {
+  width: 33.33%;
+  height: 100%;
+}
+
+.cfca-pad-keyboard-key {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: center;
+  background-color: #fff;
+  line-height: inherit;
+  font-family: sans-serif, Arial, Microsoft YaHei;
+}
+
+.cfca-pad-complete-keyboard-key {
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px 0px #828386;
+}
+
+.cfca-pad-complete-keyboard-func-key {
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #bfc3c7;
+  line-height: inherit;
+}
+
+.cfca-pad-digital-keyboard-key {
+  line-height: 50px;
+  border: solid #d9dbdf;
+  border-width: 1px 1px 0px 0px;
+  border-radius: 0px;
+}
+
+.cfca-pad-digital-keyboard-func-key {
+  line-height: 50px;
+  background-color: #d9dbdf;
+  border: solid #d9dbdf;
+  border-width: 1px 0px 0px 0px;
+  border-radius: 0px;
+}
+
+.cfca-pad-digital-keyboard-edge-key {
+  line-height: 50px;
+  border: solid #d9dbdf;
+  border-width: 1px 0px 0px 0px;
+  border-radius: 0px;
+}
+
+.cfca-pad-keyboard-key::after {
+  border: none;
+}
+
+.cfca-pad-digital-keyboard-key::after {
+  border: none;
+}
+
+.cfca-pad-keyboard-view-capslock {
+  width: 14%;
+}
+
+.cfca-pad-keyboard-view-switch {
+  width: 20%;
+}
+
+.cfca-pad-keyboard-view-space {
+  width: 58%;
+}
+
+.cfca-pad-keyboard-space-key {
+  font-size: 13px;
+  line-height: inherit;
+  background-color: #fff;
+}
+
+.cfca-pad-complete-keyboard-key-hover {
+  background-color: #bcc0c9;
+  line-height: inherit;
+}
+
+.cfca-pad-complete-keyboard-func-key-hover {
+  background-color: #989da7;
+  line-height: inherit;
+}
+
+.cfca-pad-digital-keyboard-key-hover {
+  background-color: #d9dbdf;
+  line-height: 50px;
+}
+
+.cfca-pad-digital-keyboard-func-key-hover {
+  background-color: #c7cbd1;
+  line-height: 50px;
+}
+
+.cfca-pad-keyboard-key-gap-normal {
+  height: 46px;
+  width: 1%;
+}
+
+.cfca-pad-keyboard-key-gap-one {
+  height: 46px;
+  width: 0.5%;
+}
+
+.cfca-pad-keyboard-key-gap-two {
+  height: 46px;
+  width: 5.25%;
+}
+
+.cfca-pad-keyboard-symbol-key-gap-three {
+  height: 46px;
+  width: 21%;
+}
+
+.cfca-pad-keyboard-key-number-gap-one {
+  height: 46px;
+  width: 3%;
+}
+
+.cfca-pad-logo {
+  width: 70%;
+  height: 56%;
+  vertical-align: middle;
+}
+
+.cfca-pad-complete-func-img {
+  width: 60%;
+  height: 54%;
+  vertical-align: middle;
+}
+
+.cfca-pad-digital-func-img {
+  width: 30%;
+  height: 54%;
+  vertical-align: middle;
+}
+

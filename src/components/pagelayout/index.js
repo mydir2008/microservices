@@ -16,11 +16,11 @@ import './index.scss'
 class PageLayout extends Component {
     static externalClasses = ['page-layout-class']
     static defaultProps = {
-        loading: 0,
-        //loading
+        isLoading: null,
         loadingText: '执行中...',
         loadingIcon: 'loading',
         openLoading: false,
+        modelName: 'default',
         //result
         toastOption: {}
     }
@@ -30,19 +30,19 @@ class PageLayout extends Component {
         hasNeedConverCanvasToImge: false
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.dyncConvertCanvasToImage()
     }
 
     /**
      * 动态转换执行图片与canvans的互转
      */
-    dyncConvertCanvasToImage(){
+    dyncConvertCanvasToImage() {
         const hasNeedConverCanvasToImge = applyPlugins('decide-canvas-to-img-transform', () => ({
             props: this.props
         }))
 
-        if (this.state.hasNeedConverCanvasToImge !== hasNeedConverCanvasToImge){
+        if (this.state.hasNeedConverCanvasToImge !== hasNeedConverCanvasToImge) {
             const updateCanvansImageCount = (this.props.global.updateCanvansImageCount || 0) + 1
             this.props.dispatch({
                 type: 'global/save',
@@ -55,37 +55,38 @@ class PageLayout extends Component {
         this.state.hasNeedConverCanvasToImge = hasNeedConverCanvasToImge
     }
 
-    componentWillMount() {}
+    componentWillMount() { }
 
     componentDidMount() {
     }
 
-    getLoginUser() {
-        return redux.getStore().getState().global.user || this.state.notNeedCheckSession
-    }
-
-    hasLogined() {
-        return redux.getStore().getState().loading['global/login'] === false || this.state.notNeedCheckSession
-    }
-
-    hasLogining() {
-        return redux.getStore().getState().loading['global/login'] === true && this.state.notNeedCheckSession === false
-    }
-    
-
-    //获取页面状态
-    isLoading() {
-        return this.hasLogining() || this.props.loading
-    }
-
     render() {
-        const { toastOption } = this.props;
-        return <View className='pagelayout page-layout-class'>
-            {this.props.children}
-        </View>
+        const { isLoading } = this.props
+        //const { loadingMark,initLoading } = this.props[modelName];
+        return (
+            <View className='pagelayout page-layout-class'>
+                {
+                    isLoading === 1 && <View className='loaddingView'>
+                        <View className='loaderView'>
+                            <View className='loader'></View>
+                        </View>
+                    </View>
+                }
+                {
+                    isLoading === 2 && <View className='loaddingView'>
+                        <View className='mask'></View>
+                        <View className='loaderView'>
+                            <View className='loader'></View>
+                        </View>
+                    </View>
+                }
+                {isLoading !== 2 && this.props.children}
+            </View>
+
+        )
     }
 }
-export const TOAST_LOADING = {status: 'loading', duration: 0, icon: 'loading', text: '操作中...', isOpened: true}
-export const TOAST_SUCCESS = {status: '', duration: 2000, icon: 'success', text: '操作成功', isOpened: true}
-export const TOAST_ERROR = {status: '', duration: 2000, icon: 'error', text: '操作失败', isOpened: true}
+export const TOAST_LOADING = { status: 'loading', duration: 0, icon: 'loading', text: '操作中...', isOpened: true }
+export const TOAST_SUCCESS = { status: '', duration: 2000, icon: 'success', text: '操作成功', isOpened: true }
+export const TOAST_ERROR = { status: '', duration: 2000, icon: 'error', text: '操作失败', isOpened: true }
 export default PageLayout;

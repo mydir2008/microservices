@@ -1,0 +1,6 @@
+/**
+ * 左右居中
+ */
+@mixin textalign($text-align: center) {
+  text-align: $text-align;
+}

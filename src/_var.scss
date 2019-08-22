@@ -1,0 +1,37 @@
+@import 'components/common/styles/default.scss';
+@import 'components/common/styles/index.scss';
+
+$background-white: #fff;
+$color-white: #fff;
+$color-blue: #83b1df; //通用字体蓝色
+$card-tit-color: #5676a1; //卡片标题颜色
+$card-gray-color: #535353; //卡片文字颜色
+$bordercolor: #e1e1e1; //边框线颜色
+$page-background-color: #f6f6f6; //主题页背景色
+$notice-tit-text-color: #ffb740; //notice字体颜色
+$orange-color: #ffb740; //主题橘黄
+$gray-color: #888888; //主题灰色
+$black-color: #000000; //主题黑色
+$padding30: 30px; //两边边距30rpx
+$margin30: 30px;
+
+//单元格样式
+$col-height: 88px; //单元格高度
+$col-name-fontsize: 30px; //单元格左边文字大小
+$col-name-color: #535353; //单元格左边文字色值
+//输入框placeholder字体色值
+$placeholder-color: #d9dadb;
+//btn渐变色蓝色
+$btn-backgroundcolor: linear-gradient(#c2e0fa, #7ea9d5);
+//右箭头通用色值
+$colorarrowcolor: $col-name-color;
+
+$border-color: #fff;
+// 字体大小
+$font-size-xs: 24px; // 非常用字号，用于标签
+$font-size-sm: 26px; // 用于辅助信息
+$font-size-base: 28px; // 常用字号
+$font-size-lg: 30px; // 常规标题
+$font-size-xl: 32px; // 大标题
+$font-size-xlm: 34px; // 大标题
+$font-size-xxl: 36px; // 用于大号的数字

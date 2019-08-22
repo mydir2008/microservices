@@ -32,6 +32,7 @@ export default function(type, options){
         const oldFn = target[key]
         const _$$dispaths = oldFn._$$dispaths || []
         _$$dispaths.push({
+            funcName: key,
             type,
             options
         })
@@ -70,7 +71,10 @@ function createDispathProxy(target, key){
                     if (oldFn._$$callbacks.length === oldFn._$$dispaths.length){
                         const xargs = oldFn._$$callbacks.length > 1 ? oldFn._$$callbacks : oldFn._$$callbacks[0]
                         if (this.onEffectComplete){
-                            this.onEffectComplete(xargs)
+                            setTimeout(() => {
+                              this.onEffectComplete(xargs, r.funcName)
+                            }, 50)
+                            
                         }
                     }
                 }

@@ -1,0 +1,182 @@
+<!--
+  complete keyboard template declare
+  NOTE: Don't modify, otherwise keyboard will not load normally.
+  copyright: CFCA
+  auther: mayuchuan
+  time:23/05/2018
+-->
+
+<template name="SIPCompleteKeyboardTemplate">
+  <block wx:if="{{isShow}}">
+    <block wx:if="{{keyboardType == 1}}">
+      <view class="{{cfcakeyboardView}}" style="padding-bottom:{{bottomOffset}}rpx">
+        <block wx:for="{{keyDetailValue}}" wx:key="" wx:for-index="outterIdx" wx:for-item="outterItem">
+          <view class="{{cfcaKeyboardRow}}">
+            <block wx:if="{{outterIdx == 2}}">
+              <view class="{{specialTwoGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 3}}">
+              <view class="{{specialOneGapProperty}}"></view>
+              <view class="{{completeCapslockViewProperty}}">
+                <block wx:if="{{isUpperLetter}}">
+                  <button id="CAPSLOCK" class="{{completeSpaceKeyProperty}}" bindtap="handleInput">
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageCapslockPressed}}"></image>
+                  </button>
+                </block>
+                <block wx:else>
+                  <button id="CAPSLOCK" class="{{completeFuncKeyProperty}}" bindtap="handleInput">
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageCapslock}}"></image>
+                  </button>
+                </block>
+              </view>
+              <view class="{{normalGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 4}}">
+              <view class="{{specialOneGapProperty}}"></view>
+              <view class="{{completeSwitchViewProperty}}">
+                <button data-hi="#+=" class="{{completeFuncKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">#+=</button>
+              </view>
+              <view class="{{normalGapProperty}}"></view>
+              <view class="{{completeSpaceViewProperty}}">
+                <button data-hi="BLANK" class="{{completeSpaceKeyProperty}}">
+                  <image class="cfca-logo" mode="aspectFit" src="{{imgLogo}}"></image>
+                </button>
+              </view>
+              <view class="{{normalGapProperty}}"></view>
+              <view class="{{completeSwitchViewProperty}}">
+                <button data-hi="FINISH" class="{{completeFuncKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">{{finishTitle}}</button>
+              </view>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+            <block wx:else>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+
+            <block wx:for="{{outterItem}}" wx:key="" wx:for-index="innerIdx" wx:for-item="innerItem">
+              <view class="{{completeKeyViewProperty}}">
+                <button data-hi="{{innerItem.value}}" class="{{completeKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardKeyHover}}">{{innerItem.value}}</button>
+              </view>
+
+              <block wx:if="{{innerIdx == 9}}">
+                <view class="{{specialOneGapProperty}}"></view>
+              </block>
+              <block wx:elif="{{outterIdx == 2}}">
+                <block wx:if="{{innerIdx == 8}}">
+                </block>
+                <block wx:else>
+                  <view class="{{normalGapProperty}}"></view>
+                </block>
+              </block>
+              <block wx:else>
+                <view class="{{normalGapProperty}}"></view>
+              </block>
+            </block>
+
+            <block wx:if="{{outterIdx == 3}}">
+              <view class="{{completeCapslockViewProperty}}">
+                <button id="DELETE" class="{{completeFuncKeyProperty}}" bindtap="handleInput" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" bindtouchcancel="onTouchcancel" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">
+                  <block wx:if="{{isDeleting}}">
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageDeletePressed}}"></image>
+                  </block>
+                  <block wx:else>
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageDelete}}"></image>
+                  </block>
+                </button>
+              </view>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 2}}">
+              <view class="{{specialTwoGapProperty}}"></view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{keyboardType == 2}}">
+      <view class="{{cfcakeyboardView}}" style="padding-bottom:{{bottomOffset}}rpx">
+        <block wx:for="{{keyDetailValue}}" wx:key="" wx:for-index="outterIdx" wx:for-item="outterItem">
+          <view class="{{cfcaKeyboardRow}}">
+            <block wx:if="{{outterIdx == 2}}">
+              <view class="{{specialTwoGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 3}}">
+              <view class="{{specialOneGapProperty}}"></view>
+              <view class="{{completeCapslockViewProperty}}">
+                <button id="LETTER_SHIFT" class="{{completeFuncKeyProperty}}">
+                  <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageCapslock}}"></image>
+                </button>
+              </view>
+              <view class="{{specialThreeGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 4}}">
+              <view class="{{specialOneGapProperty}}"></view>
+              <view class="{{completeSwitchViewProperty}}">
+                <button data-hi="ABC" class="{{completeFuncKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">ABC</button>
+              </view>
+              <view class="{{normalGapProperty}}"></view>
+              <view class="{{completeSpaceViewProperty}}">
+                <button data-hi="BLANK" class="{{completeSpaceKeyProperty}}">
+                  <image class="cfca-logo" mode="aspectFit" src="{{imgLogo}}"></image>
+                </button>
+              </view>
+              <view class="{{normalGapProperty}}"></view>
+              <view class="{{completeSwitchViewProperty}}">
+                <button data-hi="FINISH" class="{{completeFuncKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">{{finishTitle}}</button>
+              </view>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+            <block wx:else>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+
+            <block wx:for="{{outterItem}}" wx:key="" wx:for-index="innerIdx" wx:for-item="innerItem">
+              <view class="{{completeKeyViewProperty}}">
+                <button data-hi="{{innerItem.value}}" class="{{completeKeyProperty}}" bindtap="handleInput" hover-class="{{cfcaCompleteKeyboardKeyHover}}">{{innerItem.value}}</button>
+              </view>
+
+              <block wx:if="{{innerIdx == 9}}">
+                <view class="{{specialOneGapProperty}}"></view>
+              </block>
+              <block wx:elif="{{outterIdx == 2}}">
+                <block wx:if="{{innerIdx == 8}}">
+                </block>
+                <block wx:else>
+                  <view class="{{normalGapProperty}}"></view>
+                </block>
+              </block>
+              <block wx:elif="{{outterIdx == 3}}">
+                <block wx:if="{{innerIdx == 2}}">
+                </block>
+                <block wx:else>
+                  <view class="{{normalGapProperty}}"></view>
+                </block>
+              </block>
+              <block wx:else>
+                <view class="{{normalGapProperty}}"></view>
+              </block>
+            </block>
+
+            <block wx:if="{{outterIdx == 3}}">
+              <view class="{{specialThreeGapProperty}}"></view>
+              <view class="{{completeCapslockViewProperty}}">
+                <button id="DELETE" class="{{completeFuncKeyProperty}}" bindtap="handleInput" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" bindtouchcancel="onTouchcancel" hover-class="{{cfcaCompleteKeyboardFunckeyHover}}">
+                  <block wx:if="{{isDeleting}}">
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageDeletePressed}}"></image>
+                  </block>
+                  <block wx:else>
+                    <image class="{{imgCompleteFuncKeyProperty}}" mode="aspectFit" src="{{imageDelete}}"></image>
+                  </block>
+                </button>
+              </view>
+              <view class="{{specialOneGapProperty}}"></view>
+            </block>
+            <block wx:elif="{{outterIdx == 2}}">
+              <view class="{{specialTwoGapProperty}}"></view>
+            </block>
+
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+</template>
